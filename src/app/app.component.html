@@ -1,0 +1,49 @@
+<section>
+  
+      
+</section>
+
+
+
+<section class="container mx-auto h-screen bg-blue-300 opacity-25"><form [formGroup]="searchForm" (submit)="getWeather()">
+    
+    <div class="flex justify-center pt-4">
+        <h1 class="text-6xl">WeatherApp</h1>
+        </div>
+    <div class="flex justify-center">
+   
+    <div class="relative mt-10 w-full flex justify-center ">
+      
+        <input
+          type="text"
+          class="border-2 text-slate-950 font-medium border-gray-300 rounded-md py-2 px-4 w-1/3"
+          placeholder="Enter your City"
+          formControlName="city"
+        />
+        <button class="absolute hover:border-2 border-slate-500  inset-y-0 flex items-center ms-[30rem] px-4 bg-gray-300 rounded-md">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+              </svg>
+              
+        </button>
+      </div>
+</div>
+
+
+</form>
+<div class="flex justify-center mt-5 bg-white  w-1/3 mx-auto rounded">
+    <div *ngIf="weatherData" class="text-slate-900 font-bold text-3xl pe-5">
+    <ul class=" flex flex-col gap-3 p-5">
+        <li>City : {{weatherData.name}}</li>
+        <li>Weather :{{weatherData.weather[0].description}}</li>
+        <li>Humidity :{{weatherData.main.humidity}}</li>
+        <li>Temparature :{{weatherData.main.temp}} deg </li>
+        <li>Min Temp :{{weatherData.main.temp_min}} deg</li>
+        <li>Max Temp :{{weatherData.main.temp_max}} deg</li>
+        <li>Wind Speed  :{{weatherData.wind.speed}} kmph</li>
+    </ul>
+        
+</div>
+</div>
+
+</section>
